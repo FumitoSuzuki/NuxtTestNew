@@ -1,13 +1,11 @@
 <template>
   <section class="character">
     <div class="leadcopy">
-      <b-container class="d-flex justify-content-center py-5">
-        <b-row cols="1" align-v="center">
-          <b-col>
-            <slot name="leadcopy" />
-          </b-col>
-        </b-row>
-      </b-container>
+      <OrganismColumnMd1CenterT1>
+        <template #leadcopy>
+          <slot name="leadcopy" />
+        </template>
+      </OrganismColumnMd1CenterT1>
     </div>
     <div class="characters">
       <slot name="characters" />

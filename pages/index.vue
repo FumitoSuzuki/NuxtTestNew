@@ -4,22 +4,27 @@
       <template #body>
         <h1>Hello VUE JS</h1>
       </template>
+
       <template #footer>
         <Logo :width="60" :height="60" />
       </template>
     </TemplateIntroduction>
+
     <TemplateCharacter class="scroll-snap-start">
       <template #leadcopy>
         <MoleculeTextMdCenterT1 :content="leadcopy" />
       </template>
+
       <template #characters>
-        <OrganismColumnMd3ContainerT1 :items="characters" class="py-5" />
+        <OrganismColumnMd3T1 :items="characters" class="py-5" />
       </template>
     </TemplateCharacter>
-    <TemplatePlanTable class="scroll-snap-start">
+
+    <TemplateComparison class="scroll-snap-start">
       <template #headerTitle>
-        <h2>Comparison with Other Frameworks</h2>
+        <h2 class="py-5">Comparison with Other Frameworks</h2>
       </template>
+
       <template #headerBottomImg>
         <b-img
           src="/image/img_pcsp.svg"
@@ -27,10 +32,11 @@
           style="position: relative; left: 15%"
         />
       </template>
-      <template #table>
-        <OrganismComparisonMd3ContainerT1 :items="plantable" class="py-5" />
+
+      <template #comparison>
+        <OrganismComparisonColumnMd3T1 :items="plantable" class="py-5" />
       </template>
-    </TemplatePlanTable>
+    </TemplateComparison>
   </div>
 </template>
 

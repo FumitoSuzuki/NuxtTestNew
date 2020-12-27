@@ -1,5 +1,5 @@
 <template>
-  <b-container class="column-md3-container">
+  <b-container class="column-md3">
     <TheAlignRowItems :target="alignTarget">
       <b-row align-v="center" cols="1" cols-md="3">
         <b-col v-for="(item, key) in items" :key="key">
@@ -35,13 +35,13 @@ export default {
 </script>
 
 <style scoped>
-.column-md3-container {
+.column-md3 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
 }
-.column-md3-container {
+.column-md3 {
   text-align: center;
 }
 .title {
