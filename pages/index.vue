@@ -1,63 +1,50 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">NuxtTestNew</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div id="main">
+    <TemplateIntroduction class="scroll-snap-start">
+      <template #body>
+        <h1>Hello VUE JS</h1>
+      </template>
+      <template #footer>
+        <Logo :width="60" :height="60" />
+      </template>
+    </TemplateIntroduction>
+    <TemplateCharacter class="scroll-snap-start">
+      <template #leadcopy>
+        <MoleculeTextMdCenterT1 :content="leadcopy" />
+      </template>
+      <template #characters>
+        <OrganismColumnMd3ContainerT1 :items="characters" class="py-5" />
+      </template>
+    </TemplateCharacter>
+    <TemplatePlanTable class="scroll-snap-start">
+      <template #headerTitle>
+        <h2>Comparison with Other Frameworks</h2>
+      </template>
+      <template #headerBottomImg>
+        <b-img
+          src="/image/img_pcsp.svg"
+          class="w-100"
+          style="position: relative; left: 15%"
+        />
+      </template>
+      <template #table>
+        <OrganismComparisonMd3ContainerT1 :items="plantable" class="py-5" />
+      </template>
+    </TemplatePlanTable>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData({ $content }) {
+    const leadcopy = await $content('index/leadcopy').fetch()
+    const characters = await $content('index/characters').sortBy('slug').fetch()
+    const plantable = await $content('index/plantable').sortBy('slug').fetch()
+    return {
+      leadcopy,
+      characters,
+      plantable,
+    }
+  },
+}
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
