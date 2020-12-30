@@ -1,14 +1,26 @@
 <template>
-  <TheFullsizeBox class="introduction p-2">
+  <TheFullsizeBox class="introduction scroll-snap-start">
     <b-container fluid class="block h-100">
       <b-row align-v="center" class="header">
-        <b-col><slot name="header" /></b-col>
+        <b-col>
+          <slot name="header" />
+        </b-col>
       </b-row>
+
       <b-row align-v="center" class="body">
-        <b-col><slot name="body" /></b-col>
+        <b-col>
+          <slot name="body">
+            <h1>Hello VUE JS</h1>
+          </slot>
+        </b-col>
       </b-row>
+
       <b-row align-v="center" class="footer">
-        <b-col><slot name="footer" /></b-col>
+        <b-col>
+          <slot name="footer">
+            <Logo :width="60" :height="60" />
+          </slot>
+        </b-col>
       </b-row>
     </b-container>
   </TheFullsizeBox>

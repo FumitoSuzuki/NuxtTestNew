@@ -13,6 +13,9 @@ html {
 .scroll-snap-start {
   scroll-snap-align: start;
 }
+.scroll-snap-end {
+  scroll-snap-align: start end;
+}
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.5s;

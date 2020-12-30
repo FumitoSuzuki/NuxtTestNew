@@ -1,17 +1,30 @@
 <template>
   <section class="character">
     <div class="leadcopy">
-      <OrganismColumnMd1CenterT1>
-        <template #leadcopy>
-          <slot name="leadcopy" />
-        </template>
-      </OrganismColumnMd1CenterT1>
+      <OrganismColumnCenterT1>
+        <MoleculeStyleFormatT1 class="text-md-center">
+          <NuxtContent :document="leadcopy" class="" />
+        </MoleculeStyleFormatT1>
+      </OrganismColumnCenterT1>
     </div>
     <div class="characters">
-      <slot name="characters" />
+      <OrganismColumnItemT1 :items="characters">
+        <template v-slot="item">
+          <MoleculeCharacterT1 :item="item.props" />
+        </template>
+      </OrganismColumnItemT1>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    leadcopy: { type: Object, default: () => {} },
+    characters: { type: Array, default: () => [] },
+  },
+}
+</script>
 
 <style scoped>
 .leadcopy {

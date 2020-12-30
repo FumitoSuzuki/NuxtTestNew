@@ -1,13 +1,8 @@
 <template>
-  <b-container class="header-bottom-img">
-    <b-row align-v="center" class="title">
-      <b-col class="text-center">
-        <slot name="title" />
-      </b-col>
-    </b-row>
-    <b-row align-v="end" align-h="center" class="image">
-      <b-col v-bind="columns" class="imgColumn">
-        <slot name="image" />
+  <b-container class="column-center">
+    <b-row align-v="center" align-h="center">
+      <b-col v-bind="columns">
+        <slot />
       </b-col>
     </b-row>
   </b-container>
@@ -36,14 +31,9 @@ export default {
 </script>
 
 <style scoped>
-.header-bottom-img >>> img {
-  max-width: 100%;
-  height: inherit;
-}
-.title {
-  min-height: 25vh;
-}
-.image {
-  min-height: 25vh;
+.column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>
