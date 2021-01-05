@@ -19,7 +19,12 @@ export default {
   props: {
     item: {
       type: Object,
-      default: () => {},
+      default: () => ({
+        introduct: { file: { url: '' } },
+        id: '',
+        title: '',
+        discription: '',
+      }),
     },
   },
 }

@@ -1,23 +1,23 @@
 <template>
-  <TheResponsiveBreak class="format">
+  <TheResponsiveBreak class="style-format">
     <slot />
   </TheResponsiveBreak>
 </template>
 
 <style scoped>
-.format >>> h1,
-.format >>> h2,
-.format >>> h3,
-.format >>> h4,
-.format >>> h5,
-.format >>> h6 {
+.style-format >>> h1,
+.style-format >>> h2,
+.style-format >>> h3,
+.style-format >>> h4,
+.style-format >>> h5,
+.style-format >>> h6 {
   color: var(--primary);
   margin-bottom: 3rem;
 }
-.format >>> strong {
+.style-format >>> strong {
   color: var(--primary);
 }
-.format >>> p:last-child {
+.style-format >>> p:last-child {
   margin-bottom: 0;
 }
 </style>

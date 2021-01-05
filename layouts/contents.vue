@@ -4,14 +4,12 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   scroll-snap-type: y proximity;
-}
-.snap-start {
-  scroll-snap-align: start;
+  scroll-padding-top: 3rem;
 }
 .page-enter-active,
 .page-leave-active {

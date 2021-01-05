@@ -66,7 +66,9 @@ export default {
   methods: {
     setBoxHeight() {
       this.boxHeight = {
-        style: { '--boxHeight': this.getBoxHeight },
+        style: {
+          '--boxHeight': this.getBoxHeight,
+        },
       }
     },
   },
@@ -77,6 +79,7 @@ export default {
 .fullsize-box {
   --boxHeight: auto;
   height: var(--boxHeight);
+  min-height: 100vh;
 }
 .test-box {
   position: absolute;

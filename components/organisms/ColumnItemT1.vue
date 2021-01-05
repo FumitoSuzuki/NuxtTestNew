@@ -1,6 +1,6 @@
 <template>
   <b-container class="column-item">
-    <TheAlignRowItems :target="alignTarget">
+    <TheAlignRowItems :target="align">
       <b-row align-v="center" v-bind="columns">
         <b-col
           v-for="(item, key) in items"
@@ -23,17 +23,13 @@ export default {
       type: Array,
       default: () => [],
     },
-    cols: { type: Number, default: 1 },
-    sm: { type: Number, default: 0 },
-    md: { type: Number, default: 3 },
-    lg: { type: Number, default: 0 },
-    xl: { type: Number, default: 0 },
-    margin: { type: Number, default: 3 },
-  },
-  data() {
-    return {
-      alignTarget: ['title', 'text'],
-    }
+    cols: { type: String, default: '1' },
+    sm: { type: String, default: '' },
+    md: { type: String, default: '3' },
+    lg: { type: String, default: '' },
+    xl: { type: String, default: '' },
+    margin: { type: String, default: '3' },
+    align: { type: Array, default: () => ['title', 'text'] },
   },
   computed: {
     columns() {
@@ -57,7 +53,7 @@ export default {
       return padding
     },
     mkMargin(cols, total, key) {
-      return Math.ceil(total / cols) * cols - cols > key ? this.margin : 0
+      return Math.ceil(total / cols) * cols - cols > key ? this.margin : '0'
     },
   },
 }
