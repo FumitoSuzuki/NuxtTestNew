@@ -1,5 +1,5 @@
 {
-  "name": "NuxtTestNew",
+  "name": "nuxt-test-new",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -19,7 +19,7 @@
     "bootstrap": "^4.5.2",
     "bootstrap-icons": "^1.2.2",
     "bootstrap-vue": "^2.17.3",
-    "contentful": "^8.1.5",
+    "contentful": "7.15.0",
     "core-js": "^3.6.5",
     "node-sass": "^5.0.0",
     "nodemailer": "^6.4.17",
@@ -40,5 +40,7 @@
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "prettier": "^2.1.2"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }

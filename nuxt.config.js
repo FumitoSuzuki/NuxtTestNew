@@ -10,13 +10,16 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: '' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [{ src: '~/assets/scss/bootstrap.scss', lang: 'scss' }],
+  css: [
+    { src: '~/assets/scss/bootstrap.scss', lang: 'scss' },
+    { src: 'prism-themes/themes/prism-material-oceanic.css', lang: 'css' }
+  ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
@@ -25,7 +28,7 @@ export default {
     { src: '~/plugins/contentful' },
     { src: '~/plugins/prism' },
     { src: '~/plugins/vee-validate' },
-    { src: '~/plugins/window' },
+    { src: '~/plugins/window' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -34,13 +37,13 @@ export default {
     { path: '~/components/atoms', prefix: 'atom' },
     { path: '~/components/molecules', prefix: 'molecule' },
     { path: '~/components/organisms', prefix: 'organism' },
-    { path: '~/components/templates', prefix: 'template' },
+    { path: '~/components/templates', prefix: 'template' }
   ],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    '@nuxtjs/eslint-module'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -54,22 +57,29 @@ export default {
     // https://github.com/markdown-it/markdown-it
     '@nuxtjs/markdownit',
     // https://www.npmjs.com/package/nuxt-basic-auth-module
-    'nuxt-basic-auth-module',
+    'nuxt-basic-auth-module'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: process.env.BASE_URL || undefined,
+    baseURL: process.env.BASE_URL || undefined
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
+  content: {
+    markdown: { prism: { theme: false } }
+  },
+
+  // Markdown content configuration (https://www.npmjs.com/package/@nuxtjs/markdownit)
+  markdownit: {
+    injected: true
+  },
 
   // basic configuration (https://www.npmjs.com/package/nuxt-basic-auth-module)
   basic: {
     name: process.env.BASIC_USER,
     pass: process.env.BASIC_PASS,
-    enabled: new Boolean(process.env.BASIC_PASS),
+    enabled: new Boolean(process.env.BASIC_PASS)
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -77,7 +87,7 @@ export default {
     extractCSS: true,
     transpile: ['vee-validate/dist/rules'],
     babel: { compact: true },
-    extend(config, ctx) {},
+    extend(config, ctx) {}
   },
 
   env: {
@@ -89,6 +99,6 @@ export default {
       process.env.CTF_PRE_ACCESS_TOKEN || config.CTF_PRE_ACCESS_TOKEN,
     CTF_PERSON_ID: process.env.CTF_PERSON_ID || config.CTF_PERSON_ID,
     CTF_BLOG_POST_TYPE_ID:
-      process.env.CTF_BLOG_POST_TYPE_ID || config.CTF_BLOG_POST_TYPE_ID,
-  },
+      process.env.CTF_BLOG_POST_TYPE_ID || config.CTF_BLOG_POST_TYPE_ID
+  }
 }
