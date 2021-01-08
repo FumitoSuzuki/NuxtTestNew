@@ -18,6 +18,7 @@
       </header>
 
       <section id="eyecatch" class="py-5">
+        <AtomUTCtoDate :utc="entry.updatedAt" />
         <OrganismColumnCenterT1>
           <b-img
             :src="entry.introduct.file.url"
@@ -28,6 +29,9 @@
       </section>
 
       <section id="content" class="pb-5">
+        <p>
+          <AtomUTCtoDate :utc="entry.updatedAt" />
+        </p>
         <OrganismColumnCenterT1>
           <TheMarkdown :md="entry.markup" />
         </OrganismColumnCenterT1>
