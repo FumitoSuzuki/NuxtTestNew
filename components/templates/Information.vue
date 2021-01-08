@@ -9,7 +9,7 @@
       <nuxt-content :document="procedure" />
     </OrganismColumnCenterT1>
 
-    <!-- <OrganismFormInformationT1 class="form mb-5" /> -->
+    <OrganismFormInformationT1 class="form mb-5" />
 
     <OrganismColumnCenterT1 class="profile mb-5">
       <Logo width="200" height="200" />
