@@ -74,7 +74,7 @@
     <section id="blog-posts" class="py-5">
       <!-- blog-posts header section -->
       <OrganismColumnCenterT1 class="header mb-5">
-        <h2>Comparison with Other Frameworks</h2>
+        <h2>Blog posts</h2>
       </OrganismColumnCenterT1>
       <!-- blog-posts header section -->
       <!-- blog-posts body section -->
@@ -104,7 +104,7 @@ export default {
     const characters = await $content('index/characters').sortBy('slug').fetch()
     const comparison = await $content('index/comparison').sortBy('slug').fetch()
     const procedure = await $content('index/procedure').fetch()
-    // const onThisPage = await store.getters['contentful/onThisPage']
+    await store.commit('contentful/pageNumber', 1)
     return { introduction, leadcopy, characters, comparison, procedure }
   },
   computed: {

@@ -1,4 +1,4 @@
-"src","alt"
-"/image/basedesign.png","sample"
-"/image/basedesign.png","sample"
-"/image/basedesign.png","sample"
+"id","src","alt","directry"
+"001","/image/basedesign.png","sample","style001"
+"002","/image/basedesign.png","sample","style002"
+"003","/image/basedesign.png","sample","style003"

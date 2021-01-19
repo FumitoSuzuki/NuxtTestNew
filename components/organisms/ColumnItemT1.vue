@@ -1,7 +1,7 @@
 <template>
   <b-container class="column-item">
     <TheAlignRowItems :target="align">
-      <b-row align-v="center" v-bind="columns">
+      <b-row align-v="center" v-bind="columns" :no-gutters="noGutters">
         <b-col
           v-for="(item, key) in items"
           :key="key"
@@ -30,6 +30,7 @@ export default {
     xl: { type: String, default: '' },
     margin: { type: String, default: '3' },
     align: { type: Array, default: () => ['title', 'text'] },
+    noGutters: { type: Boolean, default: false },
   },
   computed: {
     columns() {

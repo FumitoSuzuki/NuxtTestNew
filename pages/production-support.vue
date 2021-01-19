@@ -10,7 +10,9 @@
         <!-- introduction body & footer section -->
         <OrganismHeaderBottomImgT1 md="4">
           <template #title>
-            <NuxtContent :document="leadcopy" />
+            <TheResponsiveBreak class="text-left text-md-center">
+              <NuxtContent :document="leadcopy" />
+            </TheResponsiveBreak>
           </template>
           <template #image>
             <b-img
@@ -24,10 +26,10 @@
 
       <section id="layout-sample" class="py-5">
         <!-- layout-sample header section -->
-        <OrganismColumnCenterT1 class="text-center mb-5">
-          <h2>Layout Sample</h2>
+        <OrganismColumnCenterT1 class="mb-5">
+          <h2 class="text-center">Layout Sample</h2>
           <p>
-            <TheResponsiveBreak>
+            <TheResponsiveBreak class="text-left text-md-center">
               お客様の目的と目標を達成するためにじっくりとヒアリングをおこない、
               <br />
               おひとりおひとりのスタイルに合わせたご提案をします。
@@ -43,7 +45,26 @@
               :img-src="item.props.src"
               :img-alt="item.props.alt"
               style="height: 50vh; overflow: hidden"
+              @click="$bvModal.show(`sample-${item.props.id}`)"
             />
+            <!-- <b-link :to="`/templates/${item.props.directry}/`">
+            </b-link> -->
+            <b-modal
+              :id="`sample-${item.props.id}`"
+              :title="`Layout sample #${item.props.id}`"
+              ok-only
+              ok-title="Close"
+              size="xl"
+            >
+              <div style="height: 60vh">
+                <iframe
+                  :src="`/templates/${item.props.directry}/`"
+                  width="160%"
+                  height="160%"
+                  style="transform: scale(0.625); transform-origin: 0 0"
+                />
+              </div>
+            </b-modal>
           </template>
         </OrganismColumnItemT1>
         <!-- layout-sample item section -->
@@ -91,5 +112,8 @@ export default {
 }
 .header-bottom-img >>> .title {
   min-height: 50vh;
+}
+#layout-sample >>> .modal-dialog {
+  max-width: 1200px;
 }
 </style>

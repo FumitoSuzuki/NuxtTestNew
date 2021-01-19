@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    padding: { type: String, default: '' },
+    padding: { type: String, default: '0' },
   },
   data() {
     return { scroll: 0 }

@@ -4,7 +4,7 @@
  * https://vuex.vuejs.org/ja/guide/state.html
  */
 export const state = () => ({
-  displayLimit: 12,
+  displayLimit: 3,
   pageNumber: 1,
 })
 /*

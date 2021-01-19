@@ -18,7 +18,6 @@
       </header>
 
       <section id="eyecatch" class="py-5">
-        <AtomUTCtoDate :utc="entry.updatedAt" />
         <OrganismColumnCenterT1>
           <b-img
             :src="entry.introduct.file.url"
@@ -29,11 +28,13 @@
       </section>
 
       <section id="content" class="pb-5">
-        <p>
-          <AtomUTCtoDate :utc="entry.updatedAt" />
-        </p>
         <OrganismColumnCenterT1>
-          <TheMarkdown :md="entry.markup" />
+          <div>
+            <div class="mb-3">
+              UpdatedAt: <AtomUtcToDate :utc="entry.updatedAt" />
+            </div>
+            <TheMarkdown :md="entry.markup" />
+          </div>
         </OrganismColumnCenterT1>
       </section>
 
@@ -56,7 +57,9 @@
         <b-breadcrumb class="bg-transparent m-3 p-0">
           <li><b-icon icon="chevron-left" font-scale="１" />&nbsp;</li>
           <b-breadcrumb-item to="/">Top</b-breadcrumb-item>
-          <b-breadcrumb-item to="/posts/">Blog Posts</b-breadcrumb-item>
+          <b-breadcrumb-item :to="`/posts/${pageNumber}`">
+            Blog Posts
+          </b-breadcrumb-item>
         </b-breadcrumb>
       </TheFixedSwitchColorBox>
       <!-- this is header nav area -->
@@ -81,6 +84,9 @@ export default {
   computed: {
     ...mapGetters('contentful', { getEntry: 'entry' }),
     ...mapGetters('relation', { relation: 'getRelationItemsFromSlugs' }),
+    pageNumber() {
+      return this.$store.state.contentful.pageNumber
+    },
   },
 }
 </script>

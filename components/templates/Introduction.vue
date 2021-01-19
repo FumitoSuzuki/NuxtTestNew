@@ -84,7 +84,7 @@ export default {
 <style scoped>
 .container-fluid {
   --bgimage: url('');
-  --bgcolor: var(--primary);
+  --bgcolor: gainsboro;
   background-image: var(--bgimage);
   background-color: var(--bgcolor);
   background-size: cover;
