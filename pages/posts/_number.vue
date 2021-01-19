@@ -25,6 +25,12 @@
         </OrganismColumnItemT1>
       </section>
 
+      <section id="pagenation" class="pb-5">
+        <OrganismColumnCenterT1>
+          <AtomBlogPostsPagenation />
+        </OrganismColumnCenterT1>
+      </section>
+
       <TemplateInformation v-bind="{ procedure }" />
 
       <!-- this is header nav area -->

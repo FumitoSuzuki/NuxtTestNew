@@ -10,7 +10,7 @@ export default {
   computed: {
     updatedAt() {
       const inUTC = new Date(this.utc)
-      return `${inUTC.getFullYear()}/${inUTC.getMonth()}/${inUTC.getDate()}`
+      return `${inUTC.getFullYear()}.${inUTC.getMonth()}.${inUTC.getDate()}`
     },
   },
 }
