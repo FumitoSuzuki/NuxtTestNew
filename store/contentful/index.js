@@ -71,8 +71,8 @@ export const getters = {
  */
 export const actions = {
   async initialize({ dispatch, commit, getters }) {
-    await dispatch('contents/initialize')
-    await dispatch('tags/initialize', getters.allTags)
+    // await dispatch('contents/initialize')
+    // await dispatch('tags/initialize', getters.allTags)
   },
 }
 /*

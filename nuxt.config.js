@@ -30,6 +30,7 @@ export default {
     { src: '~/plugins/vee-validate' },
     { src: '~/plugins/window' },
     { src: '~/plugins/vue-parallax-js', ssr: false },
+    { src: '~/plugins/magicgrid', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -17,6 +17,7 @@ module.exports = {
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
+    'prettier/prettier': ['warning'],
     camelcase: ['error', { ignoreImports: true, properties: 'never' }],
   },
 }

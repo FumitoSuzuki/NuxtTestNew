@@ -9,24 +9,28 @@
         </TheFullsizeBox>
       </header>
 
-      <section id="favorit" class="py-5" style="min-height: 66.7vh">
-        <OrganismColumnCenterT1>
-          <h2 class="text-center mb-5">
-            だから、MOLNODA。<br />
-            100種のBOWLで「見つける。」
-          </h2>
-        </OrganismColumnCenterT1>
-        <OrganismColumnItemT1 :items="menu" class="text-center">
-          <template v-slot="item">
-            <div class="thambnail">
-              <b-img fluid :src="item.props.image" />
-            </div>
-            <h3 class="title">
-              {{ item.props.name }} <span>{{ item.props.category }}</span>
-            </h3>
-            <p class="text">{{ item.props.title }}</p>
-          </template>
-        </OrganismColumnItemT1>
+      <section class="my-5">
+        <b-container>
+          <b-row class="mb-5 text-center border-bottom">
+            <b-col>
+              <h3>おすすめメニュー</h3>
+            </b-col>
+          </b-row>
+          <b-card-group columns>
+            <b-card v-for="(item, key) in menu.body" :key="key">
+              <div class="text-center">
+                <b-card-img :src="item.image" :alt="item.alt" />
+              </div>
+              <b-card-title class="my-3">
+                {{ item.name }}
+              </b-card-title>
+              <b-card-text>
+                <p>{{ item.description }}</p>
+                <p>{{ item.price }}円(税別)</p>
+              </b-card-text>
+            </b-card>
+          </b-card-group>
+        </b-container>
       </section>
 
       <footer class="text-center bg-light py-5">
@@ -62,17 +66,17 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const directry = 'production-support/style001'
-    const menu = await $content(`${directry}/menulists`)
-      .sortBy('slug')
-      .limit(6)
-      .fetch()
+    const directry = 'template/foodmenu'
+    const menu = await $content(`${directry}/menu`).fetch()
     return { menu }
   },
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
 .fullsize-box {
   background: url('/image/sample/dung-trieu-DVA6kQNdUWs-unsplash.jpg');
   background-size: cover;
@@ -83,5 +87,28 @@ export default {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+}
+
+.card-columns {
+  @include media-breakpoint-only(sm) {
+    column-count: 2;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 3;
+  }
+}
+.card-columns .card {
+  border: 1px solid whitesmoke;
+  margin-bottom: 1.5rem;
+  // background-color: whitesmoke;
+}
+.card-columns .card:last-child {
+  margin-bottom: 0;
+}
+.card-body {
+  // padding: 0;
+}
+.card-img {
+  width: 80%;
 }
 </style>
