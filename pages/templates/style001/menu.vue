@@ -2,7 +2,7 @@
   <div id="main">
     <TheScrollContainer>
       <header class="bg-light p-2">
-        <TheFullsizeBox :vh="33.3">
+        <TheFullsizeBox vh="33.3">
           <OrganismColumnCenterT1 class="text-center text-white h-100 py-5">
             <h1>Le menu</h1>
           </OrganismColumnCenterT1>
