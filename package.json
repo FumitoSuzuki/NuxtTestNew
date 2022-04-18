@@ -19,7 +19,7 @@
     "bootstrap": "^4.5.2",
     "bootstrap-icons": "^1.2.2",
     "bootstrap-vue": "^2.17.3",
-    "contentful": "7.15.0",
+    "contentful": "^8.1.7",
     "core-js": "^3.6.5",
     "node-sass": "^5.0.0",
     "nodemailer": "^6.4.17",
@@ -29,6 +29,7 @@
     "prismjs": "^1.22.0",
     "sass-loader": "^10.1.0",
     "vee-validate": "^3.4.5",
+    "vue-magic-grid": "^0.0.4",
     "vue-parallax-js": "^0.2.3",
     "vue-scrollto": "^2.20.0"
   },
